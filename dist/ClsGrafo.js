@@ -33,8 +33,12 @@ class ClsGrafo {
     /**
      * isConectado
      */
-    isConectado() {
-        this.Arcos.map(elemento => );
+    isConectado(origen, destino) {
+        this.Arcos.map(function (elemento) {
+            if (elemento.Origen == origen && elemento.Destino == destino)
+                return true;
+        });
+        return false;
     }
 }
 //# sourceMappingURL=ClsGrafo.js.map

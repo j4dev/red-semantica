@@ -41,7 +41,11 @@ class ClsGrafo {
     /**
      * isConectado
      */
-    public isConectado():boolean {
-        this.Arcos.map(elemento=>)
+    public isConectado(origen:ClsNodo, destino:ClsNodo):boolean {
+        this.Arcos.map(function(elemento:ClsArco){
+            if (elemento.Origen == origen && elemento.Destino == destino) 
+                return true;
+        });
+        return false;
     }
 }

@@ -11,10 +11,10 @@ export class ClsArco {
     public set Destino(value: ClsNodo) {
         this._Destino = value;
     }
-    public get nodoOrigen(): ClsNodo {
+    public get Origen(): ClsNodo {
         return this._Origen;
     }
-    public set nodoOrigen(value: ClsNodo) {
+    public set Origen(value: ClsNodo) {
         this._Origen = value;
     }
 
