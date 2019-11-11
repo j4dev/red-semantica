@@ -1,0 +1,16 @@
+{
+  "name": "RedSemantica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\""
+  },
+  "keywords": [],
+  "author": "j4dev",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "typescript": "^3.7.2"
+  }
+}

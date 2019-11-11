@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red Semántica</title>
+</head>
+<body>
+    <h1>Red Semántica</h1>
+    <form>
+        <input type="text" id="insertar" placeholder="Ingresar un número" pattern="[0-9]{1,40}"/>
+        <input type="button" value="Insertar" onClick="guardar()"/>
+        
+        <input type="text" id="borrar" placeholder="Eliminar" pattern="[0-9]{1,40}"/>
+        <input type="button" value="Eliminar" onClick="eliminar()"/>
+
+        <input type="text" id="buscar" placeholder="Buscar" pattern="[0-9]{1,40}"/>
+        <input type="button" value="Buscar" onClick="search()"/>
+
+        <input type="button" value="Ver lista" onClick="nodos()"/>
+    </form>
+    
+    <h2 id="texto" >LISTA:</h2>
+    <ul id="listado"/>
+
+    </ul>
+    <!--TypeScript  compilado a javascript-->
+    <script type="text/javascript" src="dist/listsLinear.js"></script>
+</body>
+</html>
