@@ -143,9 +143,11 @@ var grafo = new ClsGrafo;
 function insertarNodo() {
     let padre = <HTMLElement> document.getElementById("padre");
     let hijo = <HTMLElement> document.getElementById("hijo");
+    
     var dato = document.querySelector<HTMLInputElement>("#insertar").value.toString();
     var nuevo:ClsNodo = new ClsNodo(dato);
     grafo.agregarNodo(nuevo);
+    (<HTMLInputElement>document.getElementById("insertar")).value = "";
     padre.innerHTML = "";
     hijo.innerHTML = "";
     console.log(grafo);
@@ -181,4 +183,6 @@ function conectarNodos() {
         }
     });
     grafo.conectarNodos(nodoPadre,nodoHijo,relacion);
+    console.log(grafo);
+    
 }

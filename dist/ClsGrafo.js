@@ -117,6 +117,7 @@ function insertarNodo() {
     var dato = document.querySelector("#insertar").value.toString();
     var nuevo = new ClsNodo(dato);
     grafo.agregarNodo(nuevo);
+    document.getElementById("insertar").value = "";
     padre.innerHTML = "";
     hijo.innerHTML = "";
     console.log(grafo);
@@ -149,5 +150,6 @@ function conectarNodos() {
         }
     });
     grafo.conectarNodos(nodoPadre, nodoHijo, relacion);
+    console.log(grafo);
 }
 //# sourceMappingURL=ClsGrafo.js.map
