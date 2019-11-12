@@ -34,11 +34,21 @@ class ClsGrafo {
      * isConectado
      */
     isConectado(origen, destino) {
-        this.Arcos.map(function (elemento) {
+        this._Arcos.map(function (elemento) {
             if (elemento.Origen == origen && elemento.Destino == destino)
                 return true;
         });
         return false;
+    }
+    /**
+     * buscarNodo()    */
+    buscarNodo(dato) {
+        this._Nodos.map(function (elemento) {
+            if (elemento.Dato == dato) {
+                return elemento;
+            }
+        });
+        return null;
     }
 }
 //# sourceMappingURL=ClsGrafo.js.map

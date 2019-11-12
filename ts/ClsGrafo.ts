@@ -42,10 +42,23 @@ class ClsGrafo {
      * isConectado
      */
     public isConectado(origen:ClsNodo, destino:ClsNodo):boolean {
-        this.Arcos.map(function(elemento:ClsArco){
+        this._Arcos.map(function(elemento:ClsArco){
             if (elemento.Origen == origen && elemento.Destino == destino) 
                 return true;
         });
         return false;
     }
+
+    /**
+     * buscarNodo()    */
+    public buscarNodo(dato:string):any {
+        this._Nodos.map(function(elemento:ClsNodo) {
+            if (elemento.Dato == dato) {
+                return elemento;
+            }
+        });
+
+        return null;
+    }
+
 }
