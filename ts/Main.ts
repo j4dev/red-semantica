@@ -2,12 +2,10 @@ import { ClsGrafo } from "ClsGrafo";
 
 var grafo:ClsGrafo;
 
-
-/**
- * insertarNodo
- */
-public insertarNodo() {
-    //var dato = (<HTMLInputElement>document.getElementById("insertar")).value.toString();
-
+/*
+**Insertar nuevo nodo
+*/
+function insertarNodo() {
+    let dato = document.querySelector<HTMLInputElement>("#insertar").value.toString();
+    
 }
-
