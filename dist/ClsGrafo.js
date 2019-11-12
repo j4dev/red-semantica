@@ -150,6 +150,13 @@ function conectarNodos() {
         }
     });
     grafo.conectarNodos(nodoPadre, nodoHijo, relacion);
+    crearPrgunta(nodoPadre, nodoHijo, relacion);
     console.log(grafo);
+}
+function crearPrgunta(nodoPadre, nodoHijo, relacion) {
+    var pregunta = document.getElementById("pregunta");
+    var option = document.createElement("option");
+    option.innerHTML = option.innerHTML = nodoPadre.Dato + " " + relacion + " " + nodoHijo.Dato;
+    pregunta.appendChild(option);
 }
 //# sourceMappingURL=ClsGrafo.js.map
