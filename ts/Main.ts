@@ -14,7 +14,24 @@ function insertarNodo() {
 }
 
 function conectarNodos() {
-    if () {
-        
+    var padre = document.querySelector<HTMLInputElement>("#padre").value.toString();
+    var hijo = document.querySelector<HTMLInputElement>("#hijo").value.toString();
+
+    if (!hijo) {
+        //let error = "<script>alert('Seleccione un hijo')</script>";
+        document.querySelector<HTMLInputElement>("#texto").value = "Seleccione un Hijo";
     }
+    if (!padre) {
+        document.querySelector<HTMLInputElement>("#texto").value = "Seleccione un Padre";
+    }
+
+    var nodoPadre:ClsNodo = null;
+    grafo.Nodo.map(function (elemento:ClsNodo) {
+        if(padre == elemento.Dato) nodoPadre = elemento;
+    });
+    var nodoHijo:ClsNodo = null;
+    grafo.Nodo.map(function (elemento:ClsNodo) {
+        if (hijo == elemento.Dato) nodoHijo = elemento;  
+    });
+    grafo.conectarNodos(nodoPadre,nodoHijo);
 }

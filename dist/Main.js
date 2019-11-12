@@ -11,7 +11,25 @@ function insertarNodo() {
     grafo.agregarNodo(nuevo);
 }
 function conectarNodos() {
-    if () {
+    var padre = document.querySelector("#padre").value.toString();
+    var hijo = document.querySelector("#hijo").value.toString();
+    if (!hijo) {
+        //let error = "<script>alert('Seleccione un hijo')</script>";
+        document.querySelector("#texto").value = "Seleccione un Hijo";
     }
+    if (!padre) {
+        document.querySelector("#texto").value = "Seleccione un Padre";
+    }
+    var nodoPadre = null;
+    grafo.Nodo.map(function (elemento) {
+        if (padre == elemento.Dato)
+            nodoPadre = elemento;
+    });
+    var nodoHijo = null;
+    grafo.Nodo.map(function (elemento) {
+        if (hijo == elemento.Dato)
+            nodoHijo = elemento;
+    });
+    grafo.conectarNodos(nodoPadre, nodoHijo);
 }
 //# sourceMappingURL=Main.js.map
