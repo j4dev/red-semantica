@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"tsc -w\" \"nodemon dist/Main.js\""
+    "dev": "concurrently \"tsc -w\""
   },
   "keywords": [],
   "author": "j4dev",
