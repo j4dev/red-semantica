@@ -1,3 +1,50 @@
+class ClsArco {
+
+    private _Origen: ClsNodo;
+    private _Destino: ClsNodo;
+
+    public get Destino(): ClsNodo {
+        return this._Destino;
+    }
+    public set Destino(value: ClsNodo) {
+        this._Destino = value;
+    }
+    public get Origen(): ClsNodo {
+        return this._Origen;
+    }
+    public set Origen(value: ClsNodo) {
+        this._Origen = value;
+    }
+
+    constructor(origen:ClsNodo, destino:ClsNodo) {
+        this._Origen = origen;
+        this._Destino = destino;
+    }
+}
+
+class ClsNodo {
+
+    private _Dato: string;
+    private _Siguiente: ClsNodo;
+
+    public get Siguiente(): ClsNodo {
+        return this._Siguiente;
+    }
+    public set Siguiente(value: ClsNodo) {
+        this._Siguiente = value;
+    }
+    public get Dato(): string {
+        return this._Dato;
+    }
+    public set Dato(value: string) {
+        this._Dato = value;
+    }
+    constructor(dato:string,siguiente:ClsNodo = null) {
+        this._Dato = dato;
+        this._Siguiente = null;
+    }
+}
+
 class ClsGrafo {
 
     private _Nodos: Array<ClsNodo>;
@@ -60,51 +107,24 @@ class ClsGrafo {
 
 }
 
-class ClsArco {
+/*
+**Metodos de acceso del html a las clases.
+**
+*/
 
-    private _Origen: ClsNodo;
-    private _Destino: ClsNodo;
 
-    public get Destino(): ClsNodo {
-        return this._Destino;
-    }
-    public set Destino(value: ClsNodo) {
-        this._Destino = value;
-    }
-    public get Origen(): ClsNodo {
-        return this._Origen;
-    }
-    public set Origen(value: ClsNodo) {
-        this._Origen = value;
-    }
 
-    constructor(origen:ClsNodo, destino:ClsNodo) {
-        this._Origen = origen;
-        this._Destino = destino;
-    }
-}
+function listarNodos() {
+    var padre =<HTMLElement> document.getElementById("padre");
+    var hijo = <HTMLElement> document.getElementById("hijo");
 
-class ClsNodo {
-
-    private _Dato: string;
-    private _Siguiente: ClsNodo;
-
-    public get Siguiente(): ClsNodo {
-        return this._Siguiente;
-    }
-    public set Siguiente(value: ClsNodo) {
-        this._Siguiente = value;
-    }
-    public get Dato(): string {
-        return this._Dato;
-    }
-    public set Dato(value: string) {
-        this._Dato = value;
-    }
-    constructor(dato:string,siguiente:ClsNodo = null) {
-        this._Dato = dato;
-        this._Siguiente = null;
-    }
+    grafo.Nodo.map(function (elemento:ClsNodo) {
+        var optionh = document.createElement("option");
+        var optionp = document.createElement("option");
+        optionh.innerHTML =optionp.innerHTML = elemento.Dato;
+        padre.appendChild(optionp);
+        hijo.appendChild(optionh);
+    });
 }
 
 var grafo = new ClsGrafo;
@@ -113,10 +133,15 @@ var grafo = new ClsGrafo;
 **Insertar nuevo nodo
 */
 function insertarNodo() {
+    let padre = <HTMLElement> document.getElementById("padre");
+    let hijo = <HTMLElement> document.getElementById("hijo");
     var dato = document.querySelector<HTMLInputElement>("#insertar").value.toString();
     var nuevo:ClsNodo = new ClsNodo(dato);
     grafo.agregarNodo(nuevo);
+    padre.innerHTML = "";
+    hijo.innerHTML = "";
     console.log(grafo);
+    listarNodos();
 }
 
 function conectarNodos() {

@@ -1,4 +1,40 @@
 "use strict";
+class ClsArco {
+    constructor(origen, destino) {
+        this._Origen = origen;
+        this._Destino = destino;
+    }
+    get Destino() {
+        return this._Destino;
+    }
+    set Destino(value) {
+        this._Destino = value;
+    }
+    get Origen() {
+        return this._Origen;
+    }
+    set Origen(value) {
+        this._Origen = value;
+    }
+}
+class ClsNodo {
+    constructor(dato, siguiente = null) {
+        this._Dato = dato;
+        this._Siguiente = null;
+    }
+    get Siguiente() {
+        return this._Siguiente;
+    }
+    set Siguiente(value) {
+        this._Siguiente = value;
+    }
+    get Dato() {
+        return this._Dato;
+    }
+    set Dato(value) {
+        this._Dato = value;
+    }
+}
 class ClsGrafo {
     constructor() {
         this._Nodos = new Array();
@@ -49,51 +85,35 @@ class ClsGrafo {
         return null;
     }
 }
-class ClsArco {
-    constructor(origen, destino) {
-        this._Origen = origen;
-        this._Destino = destino;
-    }
-    get Destino() {
-        return this._Destino;
-    }
-    set Destino(value) {
-        this._Destino = value;
-    }
-    get Origen() {
-        return this._Origen;
-    }
-    set Origen(value) {
-        this._Origen = value;
-    }
-}
-class ClsNodo {
-    constructor(dato, siguiente = null) {
-        this._Dato = dato;
-        this._Siguiente = null;
-    }
-    get Siguiente() {
-        return this._Siguiente;
-    }
-    set Siguiente(value) {
-        this._Siguiente = value;
-    }
-    get Dato() {
-        return this._Dato;
-    }
-    set Dato(value) {
-        this._Dato = value;
-    }
+/*
+**Metodos de acceso del html a las clases.
+**
+*/
+function listarNodos() {
+    var padre = document.getElementById("padre");
+    var hijo = document.getElementById("hijo");
+    grafo.Nodo.map(function (elemento) {
+        var optionh = document.createElement("option");
+        var optionp = document.createElement("option");
+        optionh.innerHTML = optionp.innerHTML = elemento.Dato;
+        padre.appendChild(optionp);
+        hijo.appendChild(optionh);
+    });
 }
 var grafo = new ClsGrafo;
 /*
 **Insertar nuevo nodo
 */
 function insertarNodo() {
+    let padre = document.getElementById("padre");
+    let hijo = document.getElementById("hijo");
     var dato = document.querySelector("#insertar").value.toString();
     var nuevo = new ClsNodo(dato);
     grafo.agregarNodo(nuevo);
+    padre.innerHTML = "";
+    hijo.innerHTML = "";
     console.log(grafo);
+    listarNodos();
 }
 function conectarNodos() {
     var padre = document.querySelector("#padre").value.toString();
