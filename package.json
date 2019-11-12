@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"tsc --module commonjs -w\" \"nodemon dist/ClsArco.js\" \"nodemon dist/ClsGrafo.js\" \"nodemon dist/ClsNodo.js\" \"nodemon dist/Main.js\""
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/ClsGrafo.js\" "
   },
   "keywords": [],
   "author": "j4dev",
