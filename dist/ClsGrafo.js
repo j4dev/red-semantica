@@ -1,8 +1,15 @@
 "use strict";
 class ClsArco {
-    constructor(origen, destino) {
+    constructor(origen, destino, relacion) {
         this._Origen = origen;
         this._Destino = destino;
+        this._Relacion = relacion;
+    }
+    get Relacion() {
+        return this._Relacion;
+    }
+    set Relacion(value) {
+        this._Relacion = value;
     }
     get Destino() {
         return this._Destino;
@@ -61,8 +68,8 @@ class ClsGrafo {
     /**
      * conectarNodos
      */
-    conectarNodos(padre, hijo) {
-        this.Arcos.push(new ClsArco(padre, hijo));
+    conectarNodos(padre, hijo, relacion) {
+        this.Arcos.push(new ClsArco(padre, hijo, relacion));
     }
     /**
      * isConectado
@@ -118,6 +125,10 @@ function insertarNodo() {
 function conectarNodos() {
     var padre = document.querySelector("#padre").value.toString();
     var hijo = document.querySelector("#hijo").value.toString();
+    var relacion = document.querySelector("#relacion").value.toString();
+    if (!relacion) {
+        document.querySelector("#texto").value = "Defina una relacion";
+    }
     if (!hijo) {
         //let error = "<script>alert('Seleccione un hijo')</script>";
         document.querySelector("#texto").value = "Seleccione un Hijo";
@@ -127,15 +138,16 @@ function conectarNodos() {
     }
     var nodoPadre = null;
     grafo.Nodo.map(function (elemento) {
-        if (padre == elemento.Dato)
+        if (padre == elemento.Dato) {
             nodoPadre = elemento;
+        }
     });
     var nodoHijo = null;
     grafo.Nodo.map(function (elemento) {
-        if (hijo == elemento.Dato)
+        if (hijo == elemento.Dato) {
             nodoHijo = elemento;
+        }
     });
-    grafo.conectarNodos(nodoPadre, nodoHijo);
-    console.log(grafo);
+    grafo.conectarNodos(nodoPadre, nodoHijo, relacion);
 }
 //# sourceMappingURL=ClsGrafo.js.map

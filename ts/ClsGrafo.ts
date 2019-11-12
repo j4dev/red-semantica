@@ -2,7 +2,14 @@ class ClsArco {
 
     private _Origen: ClsNodo;
     private _Destino: ClsNodo;
+    private _Relacion: string;
 
+    public get Relacion(): string {
+        return this._Relacion;
+    }
+    public set Relacion(value: string) {
+        this._Relacion = value;
+    }
     public get Destino(): ClsNodo {
         return this._Destino;
     }
@@ -16,9 +23,10 @@ class ClsArco {
         this._Origen = value;
     }
 
-    constructor(origen:ClsNodo, destino:ClsNodo) {
+    constructor(origen:ClsNodo, destino:ClsNodo, relacion:string) {
         this._Origen = origen;
         this._Destino = destino;
+        this._Relacion = relacion;
     }
 }
 
@@ -78,8 +86,8 @@ class ClsGrafo {
     /**
      * conectarNodos
      */
-    public conectarNodos(padre:ClsNodo, hijo:ClsNodo) {
-        this.Arcos.push(new ClsArco(padre,hijo));
+    public conectarNodos(padre:ClsNodo, hijo:ClsNodo, relacion:string) {
+        this.Arcos.push(new ClsArco(padre,hijo,relacion));
     }
 
     /**
@@ -147,7 +155,11 @@ function insertarNodo() {
 function conectarNodos() {
     var padre = document.querySelector<HTMLInputElement>("#padre").value.toString();
     var hijo = document.querySelector<HTMLInputElement>("#hijo").value.toString();
+    var relacion = document.querySelector<HTMLInputElement>("#relacion").value.toString();
 
+    if (!relacion) {
+        document.querySelector<HTMLInputElement>("#texto").value = "Defina una relacion";
+    }
     if (!hijo) {
         //let error = "<script>alert('Seleccione un hijo')</script>";
         document.querySelector<HTMLInputElement>("#texto").value = "Seleccione un Hijo";
@@ -158,12 +170,15 @@ function conectarNodos() {
 
     var nodoPadre:ClsNodo = null;
     grafo.Nodo.map(function (elemento:ClsNodo) {
-        if(padre == elemento.Dato) nodoPadre = elemento;
+        if(padre == elemento.Dato){
+            nodoPadre = elemento;
+        }
     });
     var nodoHijo:ClsNodo = null;
     grafo.Nodo.map(function (elemento:ClsNodo) {
-        if (hijo == elemento.Dato) nodoHijo = elemento;  
+        if (hijo == elemento.Dato){
+            nodoHijo = elemento; 
+        }
     });
-    grafo.conectarNodos(nodoPadre,nodoHijo);
-    console.log(grafo);
+    grafo.conectarNodos(nodoPadre,nodoHijo,relacion);
 }
