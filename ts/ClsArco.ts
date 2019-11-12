@@ -1,4 +1,4 @@
-import { ClsNodo } from "ClsNodo";
+import { ClsNodo } from "./ClsNodo";
 
 export class ClsArco {
 

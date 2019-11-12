@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"tsc -w\""
+    "dev": "concurrently \"tsc --module commonjs -w\" \"nodemon dist/ClsArco.js\" \"nodemon dist/ClsGrafo.js\" \"nodemon dist/ClsNodo.js\" \"nodemon dist/Main.js\""
   },
   "keywords": [],
   "author": "j4dev",
@@ -13,5 +13,8 @@
     "concurrently": "^5.0.0",
     "nodemon": "^1.19.4",
     "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "commonjs": "0.0.1"
   }
 }

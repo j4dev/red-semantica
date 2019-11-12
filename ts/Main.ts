@@ -1,7 +1,7 @@
-import { ClsGrafo } from "ClsGrafo";
-import { ClsNodo } from "ClsNodo";
+import { ClsGrafo } from "./ClsGrafo";
+import { ClsNodo } from "./ClsNodo";
 
-var grafo:ClsGrafo;
+var grafo = new ClsGrafo;
 
 /*
 **Insertar nuevo nodo
@@ -10,7 +10,7 @@ function insertarNodo() {
     var dato = document.querySelector<HTMLInputElement>("#insertar").value.toString();
     var nuevo:ClsNodo = new ClsNodo(dato);
     grafo.agregarNodo(nuevo);
-
+    console.log(grafo);
 }
 
 function conectarNodos() {
@@ -34,4 +34,5 @@ function conectarNodos() {
         if (hijo == elemento.Dato) nodoHijo = elemento;  
     });
     grafo.conectarNodos(nodoPadre,nodoHijo);
+    console.log(grafo);
 }

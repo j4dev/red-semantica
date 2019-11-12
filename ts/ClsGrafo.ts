@@ -1,5 +1,5 @@
-import { ClsNodo } from "ClsNodo";
-import { ClsArco } from "ClsArco";
+import { ClsNodo } from "./ClsNodo";
+import { ClsArco } from "./ClsArco";
 
 
 export class ClsGrafo {

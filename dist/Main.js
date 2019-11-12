@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ClsNodo_1 = require("ClsNodo");
-var grafo;
+const ClsGrafo_1 = require("./ClsGrafo");
+const ClsNodo_1 = require("./ClsNodo");
+var grafo = new ClsGrafo_1.ClsGrafo;
 /*
 **Insertar nuevo nodo
 */
@@ -9,6 +10,7 @@ function insertarNodo() {
     var dato = document.querySelector("#insertar").value.toString();
     var nuevo = new ClsNodo_1.ClsNodo(dato);
     grafo.agregarNodo(nuevo);
+    console.log(grafo);
 }
 function conectarNodos() {
     var padre = document.querySelector("#padre").value.toString();
@@ -31,5 +33,6 @@ function conectarNodos() {
             nodoHijo = elemento;
     });
     grafo.conectarNodos(nodoPadre, nodoHijo);
+    console.log(grafo);
 }
 //# sourceMappingURL=Main.js.map

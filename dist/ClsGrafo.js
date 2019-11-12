@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ClsArco_1 = require("ClsArco");
+const ClsArco_1 = require("./ClsArco");
 class ClsGrafo {
     constructor() {
         this._Nodos = new Array();
