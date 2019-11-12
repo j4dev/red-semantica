@@ -6,6 +6,11 @@
 </head>
 <body>
     <h1>Red Semántica</h1>
+    <h2>Primero se debe introducir los nodos,
+        luego crear la relacion entre un nodo y otro 
+    </h2>
+    <h1>La relacion debe ser un string</h1>
+    
     <form>
         <input type="text" id="insertar" placeholder="Ingresar un nodo" />
         <input type="button" value="Insertar" onClick="insertarNodo()"/><br><br>
@@ -13,19 +18,20 @@
         Nodo Padre <select id="padre">
         </select> 
         Relación entre nodos 
-        <input type="text"  placeholder="Ingrese la relación" id="relacion"/>
+        <input type="text"  placeholder="Ingrese la relación" value="es_un" id="relacion"/>
         Nodo Hijo <select id="hijo">
         </select> 
         <input type="button" value="Enlazar Nodos" onClick="conectarNodos()"/><br><br>
+        <h4>Las preguntas se generar automaticamente entre la relacion y los nodos</h4>
         Preguntar <b>¿</b> <select id="pregunta">
         </select> <b>?</b>
-        <input type="button" value="Preguntar" onClick=""/>
+        <input type="button" value="Preguntar" onClick="respuestaPregunta()"/>
     </form>
     
-    <div id="texto" ></div>
-    
+    <ul id="texto">
 
     </ul>
+    
     <!--TypeScript  compilado a javascript-->
     <script type="text/javascript" src="dist/ClsGrafo.js"></script>
 </body>

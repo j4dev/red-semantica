@@ -150,13 +150,18 @@ function conectarNodos() {
         }
     });
     grafo.conectarNodos(nodoPadre, nodoHijo, relacion);
-    crearPrgunta(nodoPadre, nodoHijo, relacion);
+    crearPregunta(nodoPadre, nodoHijo, relacion);
     console.log(grafo);
 }
-function crearPrgunta(nodoPadre, nodoHijo, relacion) {
+function crearPregunta(nodoPadre, nodoHijo, relacion) {
     var pregunta = document.getElementById("pregunta");
     var option = document.createElement("option");
     option.innerHTML = option.innerHTML = nodoPadre.Dato + " " + relacion + " " + nodoHijo.Dato;
     pregunta.appendChild(option);
+}
+function respuestaPregunta() {
+    var lista = "<li><b>TRUE</b></li>";
+    var listado = document.getElementById("texto");
+    listado.innerHTML = lista;
 }
 //# sourceMappingURL=ClsGrafo.js.map
