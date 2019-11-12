@@ -1,7 +1,7 @@
 import { ClsArco } from "ClsArco";
 import { ClsNodo } from "ClsNodo";
 
-class ClsGrafo {
+export class ClsGrafo {
 
     private _Nodos: Array<ClsNodo>;
     private _Arcos: Array<ClsArco>;

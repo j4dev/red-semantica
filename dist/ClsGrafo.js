@@ -51,4 +51,5 @@ class ClsGrafo {
         return null;
     }
 }
+exports.ClsGrafo = ClsGrafo;
 //# sourceMappingURL=ClsGrafo.js.map
