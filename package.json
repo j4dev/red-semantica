@@ -1,16 +1,17 @@
 {
-  "name": "RedSemantica",
+  "name": "listas-circulares",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"tsc -w\""
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/listsCircular.js\""
   },
   "keywords": [],
   "author": "j4dev",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.0.0",
-    "typescript": "^3.7.2"
+    "nodemon": "^1.19.4",
+    "typescript": "^3.6.4"
   }
 }
