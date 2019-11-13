@@ -1,3 +1,4 @@
+var pregunta_texto = "";
 class ClsArco {
 
     private _Origen: ClsNodo;
@@ -191,11 +192,16 @@ function  crearPregunta(nodoPadre:ClsNodo,nodoHijo:ClsNodo, relacion:string) {
     var pregunta =<HTMLElement> document.getElementById("pregunta");
     var option = document.createElement("option");
     option.innerHTML =option.innerHTML = nodoPadre.Dato+" "+relacion+" "+nodoHijo.Dato;
+    pregunta_texto = nodoPadre.Dato+" "+relacion+" "+nodoHijo.Dato;
     pregunta.appendChild(option);
 }
 
 function respuestaPregunta() {
-    var lista = "<li><b>TRUE</b></li>"
+    var lista = "<li><b>Pregunta: </b>"+" ¿"+pregunta_texto+" ? "+"<b> Respuesta:</b>Si</li>"
     var listado = <HTMLElement> document.getElementById("texto");
+    var t = "nodo es_un nodo2";
+    var s = t.split(" ",1);
+    console.log(s);
+    
     listado.innerHTML = lista;
 }

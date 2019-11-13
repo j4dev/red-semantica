@@ -1,8 +1,8 @@
 {
-  "name": "listas-circulares",
+  "name": "RedSemantica",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "dev": "concurrently \"tsc -w\" "
   },
@@ -13,5 +13,5 @@
     "concurrently": "^5.0.0",
     "nodemon": "^1.19.4",
     "typescript": "^3.6.4"
-  },
+  }
 }
